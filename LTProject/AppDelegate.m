@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LTRootViewController.h"
+#import "LTBaseTabBarViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window.rootViewController = [LTRootViewController new];
+    
+    LTBaseTabBarViewController *baseTabBar = [LTBaseTabBarViewController new];
+    
+    self.window.rootViewController = baseTabBar;
     
     return YES;
 }

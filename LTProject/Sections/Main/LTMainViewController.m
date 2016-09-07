@@ -1,22 +1,22 @@
 //
-//  LTRootViewController.m
-//  LTTools
+//  LTMainViewController.m
+//  LTProject
 //
-//  Created by Jonny on 16/7/25.
+//  Created by Jonny on 16/9/7.
 //  Copyright © 2016年 上海众盟软件科技股份有限公司. All rights reserved.
 //
 
-#import "LTRootViewController.h"
+#import "LTMainViewController.h"
 
-@interface LTRootViewController ()
+@interface LTMainViewController ()
 
 @end
 
-@implementation LTRootViewController
+@implementation LTMainViewController
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
     
     [self initData];
     
@@ -31,10 +31,11 @@
 #pragma mark - 初始化视图
 - (void)initView {
     
-    self.view.backgroundColor = _kMainColor;
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self showNoneImageInView:self.view];
 }
+
 - (void)didReceiveMemoryWarning {
-    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

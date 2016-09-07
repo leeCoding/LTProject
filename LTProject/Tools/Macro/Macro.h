@@ -8,6 +8,7 @@
 
 #ifndef Macro_h
 #define Macro_h
+
 /**
  *  宏管理
  */
@@ -16,6 +17,7 @@
 #define TICK   NSDate *startTime = [NSDate date]
 #define TOCK   NSLog(@" Run Time: %f ", -[startTime timeIntervalSinceNow])
 
-
+/* 主题颜色 */
+#define _kMainColor [[UIColor alloc]initWithRed:48/255.f green:154/255.f blue:21/255.f alpha:1]
 
 #endif /* Macro_h */

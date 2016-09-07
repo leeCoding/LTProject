@@ -16,6 +16,8 @@
 		FB4FD2E31D7FC4CC001A8A3F /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4FD2DB1D7FC4CC001A8A3F /* UIView+Animation.m */; };
 		FB4FD2E41D7FC4CC001A8A3F /* UIView+Fuzzy.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4FD2DD1D7FC4CC001A8A3F /* UIView+Fuzzy.m */; };
 		FB4FD2E51D7FC4CC001A8A3F /* UIView+Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4FD2DF1D7FC4CC001A8A3F /* UIView+Layer.m */; };
+		FB4FD2E91D800C7D001A8A3F /* LTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4FD2E81D800C7D001A8A3F /* LTMainViewController.m */; };
+		FB4FD2EC1D801902001A8A3F /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4FD2EB1D801902001A8A3F /* UIViewController+Utils.m */; };
 		FB54FFC81D532B7500903F9C /* LTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB54FFC51D532B7500903F9C /* LTRootViewController.m */; };
 		FB54FFC91D532B7500903F9C /* LTRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB54FFC61D532B7500903F9C /* LTRootViewController.xib */; };
 		FB54FFCC1D532BF500903F9C /* LTBaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB54FFCB1D532BF500903F9C /* LTBaseTabBarViewController.m */; };
@@ -51,6 +53,10 @@
 		FB4FD2DD1D7FC4CC001A8A3F /* UIView+Fuzzy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Fuzzy.m"; sourceTree = "<group>"; };
 		FB4FD2DE1D7FC4CC001A8A3F /* UIView+Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layer.h"; sourceTree = "<group>"; };
 		FB4FD2DF1D7FC4CC001A8A3F /* UIView+Layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layer.m"; sourceTree = "<group>"; };
+		FB4FD2E71D800C7D001A8A3F /* LTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMainViewController.h; sourceTree = "<group>"; };
+		FB4FD2E81D800C7D001A8A3F /* LTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTMainViewController.m; sourceTree = "<group>"; };
+		FB4FD2EA1D801902001A8A3F /* UIViewController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utils.h"; sourceTree = "<group>"; };
+		FB4FD2EB1D801902001A8A3F /* UIViewController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utils.m"; sourceTree = "<group>"; };
 		FB54FFC41D532B7500903F9C /* LTRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRootViewController.h; sourceTree = "<group>"; };
 		FB54FFC51D532B7500903F9C /* LTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRootViewController.m; sourceTree = "<group>"; };
 		FB54FFC61D532B7500903F9C /* LTRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTRootViewController.xib; sourceTree = "<group>"; };
@@ -134,6 +140,15 @@
 				FB4FD2DF1D7FC4CC001A8A3F /* UIView+Layer.m */,
 			);
 			path = ViewCategory;
+			sourceTree = "<group>";
+		};
+		FB4FD2E61D800C62001A8A3F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FB4FD2E71D800C7D001A8A3F /* LTMainViewController.h */,
+				FB4FD2E81D800C7D001A8A3F /* LTMainViewController.m */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		FB54FFC01D532B7500903F9C /* Base */ = {
@@ -242,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				FB54FFC01D532B7500903F9C /* Base */,
+				FB4FD2E61D800C62001A8A3F /* Main */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -270,6 +286,8 @@
 			children = (
 				FB4FD2D21D7FC4CC001A8A3F /* ImageCategory */,
 				FB4FD2D91D7FC4CC001A8A3F /* ViewCategory */,
+				FB4FD2EA1D801902001A8A3F /* UIViewController+Utils.h */,
+				FB4FD2EB1D801902001A8A3F /* UIViewController+Utils.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -430,12 +448,14 @@
 				FBCB0B3B1D460E0700DF9D93 /* ViewController.m in Sources */,
 				FB4FD2E11D7FC4CC001A8A3F /* UIImage+Rotate.m in Sources */,
 				FB4FD2E31D7FC4CC001A8A3F /* UIView+Animation.m in Sources */,
+				FB4FD2E91D800C7D001A8A3F /* LTMainViewController.m in Sources */,
 				FB4FD2E01D7FC4CC001A8A3F /* UIImage+Color.m in Sources */,
 				FBCB0B711D47144000DF9D93 /* LTExpression.m in Sources */,
 				FBCB0B381D460E0700DF9D93 /* AppDelegate.m in Sources */,
 				FB54FFCC1D532BF500903F9C /* LTBaseTabBarViewController.m in Sources */,
 				FB4FD2E51D7FC4CC001A8A3F /* UIView+Layer.m in Sources */,
 				FB4FD2E41D7FC4CC001A8A3F /* UIView+Fuzzy.m in Sources */,
+				FB4FD2EC1D801902001A8A3F /* UIViewController+Utils.m in Sources */,
 				FB54FFD01D532C6A00903F9C /* LTHttpRequestManager.m in Sources */,
 				FBCB0B351D460E0700DF9D93 /* main.m in Sources */,
 				FBE2C88A1D65A6AD00CB701A /* LTPlaySystemSound.m in Sources */,
