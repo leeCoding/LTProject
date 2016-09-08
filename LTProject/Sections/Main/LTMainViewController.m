@@ -31,8 +31,10 @@
 #pragma mark - 初始化视图
 - (void)initView {
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    [self showNoneImageInView:self.view];
+    self.view.backgroundColor = [UIColor blackColor];
+    [self lt_showNoneImageInView:self.view];
+    
+    [self lt_showHUDSuccess:@"Hello"];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -18,6 +18,7 @@
 /* 工具类 */
 #import "LTHttpRequestManager.h"
 #import "LTExpression.h"
+#import "SVProgressHUD.h"
 
 /* 类别 */
 #import "UIView+Layer.h"

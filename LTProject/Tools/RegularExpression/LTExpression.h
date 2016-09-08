@@ -174,6 +174,4 @@
  */
 + (BOOL)lt_isValidateNickname:(NSString *)nickname;
 
-
-
 @end
