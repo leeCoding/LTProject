@@ -7,6 +7,7 @@
 //
 
 #import "LTMainViewController.h"
+#import "NSUserDefaults+Unit.h"
 
 @interface LTMainViewController ()
 
@@ -32,6 +33,7 @@
 - (void)initView {
     
     self.view.backgroundColor = [UIColor blackColor];
+    
     [self lt_showNoneImageInView:self.view];
     
     [self lt_showHUDSuccess:@"Hello"];

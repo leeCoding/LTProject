@@ -30,6 +30,8 @@
 		FBCB0B431D460E0700DF9D93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBCB0B411D460E0700DF9D93 /* LaunchScreen.storyboard */; };
 		FBCB0B711D47144000DF9D93 /* LTExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB0B701D47144000DF9D93 /* LTExpression.m */; };
 		FBE2C88A1D65A6AD00CB701A /* LTPlaySystemSound.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE2C8891D65A6AD00CB701A /* LTPlaySystemSound.m */; };
+		FBFDC86F1D8285EE00D7157C /* NSString+Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFDC86E1D8285EE00D7157C /* NSString+Unit.m */; };
+		FBFDC8731D828E3300D7157C /* NSUserDefaults+Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFDC8721D828E3300D7157C /* NSUserDefaults+Unit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,10 @@
 		FBCB0B701D47144000DF9D93 /* LTExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTExpression.m; sourceTree = "<group>"; };
 		FBE2C8881D65A6AD00CB701A /* LTPlaySystemSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPlaySystemSound.h; sourceTree = "<group>"; };
 		FBE2C8891D65A6AD00CB701A /* LTPlaySystemSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTPlaySystemSound.m; sourceTree = "<group>"; };
+		FBFDC86D1D8285EE00D7157C /* NSString+Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Unit.h"; sourceTree = "<group>"; };
+		FBFDC86E1D8285EE00D7157C /* NSString+Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Unit.m"; sourceTree = "<group>"; };
+		FBFDC8711D828E3300D7157C /* NSUserDefaults+Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Unit.h"; sourceTree = "<group>"; };
+		FBFDC8721D828E3300D7157C /* NSUserDefaults+Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Unit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,9 +299,14 @@
 		FBCB0B5F1D46186D00DF9D93 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				FBEEB0751D81BBC4000F9D6C /* DateCategory */,
 				FB4FD2ED1D811216001A8A3F /* ViewControllerCategory */,
 				FB4FD2D21D7FC4CC001A8A3F /* ImageCategory */,
 				FB4FD2D91D7FC4CC001A8A3F /* ViewCategory */,
+				FBFDC86D1D8285EE00D7157C /* NSString+Unit.h */,
+				FBFDC86E1D8285EE00D7157C /* NSString+Unit.m */,
+				FBFDC8711D828E3300D7157C /* NSUserDefaults+Unit.h */,
+				FBFDC8721D828E3300D7157C /* NSUserDefaults+Unit.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -316,6 +327,13 @@
 				FBE2C8891D65A6AD00CB701A /* LTPlaySystemSound.m */,
 			);
 			path = Sound;
+			sourceTree = "<group>";
+		};
+		FBEEB0751D81BBC4000F9D6C /* DateCategory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DateCategory;
 			sourceTree = "<group>";
 		};
 		FFE6D4DE169E8B83FEACC855 /* Pods */ = {
@@ -460,10 +478,12 @@
 				FB4FD2E01D7FC4CC001A8A3F /* UIImage+Color.m in Sources */,
 				FBCB0B711D47144000DF9D93 /* LTExpression.m in Sources */,
 				FBCB0B381D460E0700DF9D93 /* AppDelegate.m in Sources */,
+				FBFDC8731D828E3300D7157C /* NSUserDefaults+Unit.m in Sources */,
 				FB54FFCC1D532BF500903F9C /* LTBaseTabBarViewController.m in Sources */,
 				FB4FD2E51D7FC4CC001A8A3F /* UIView+Layer.m in Sources */,
 				FB4FD2E41D7FC4CC001A8A3F /* UIView+Fuzzy.m in Sources */,
 				FB4FD2F01D811216001A8A3F /* UIViewController+Utils.m in Sources */,
+				FBFDC86F1D8285EE00D7157C /* NSString+Unit.m in Sources */,
 				FB54FFD01D532C6A00903F9C /* LTHttpRequestManager.m in Sources */,
 				FBCB0B351D460E0700DF9D93 /* main.m in Sources */,
 				FBE2C88A1D65A6AD00CB701A /* LTPlaySystemSound.m in Sources */,

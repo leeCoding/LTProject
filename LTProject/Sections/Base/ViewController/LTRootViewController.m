@@ -26,6 +26,7 @@
 #pragma mark - 初始化数据
 - (void)initData {
     
+    
 }
 
 #pragma mark - 初始化视图
@@ -33,6 +34,7 @@
     
     self.view.backgroundColor = _kMainColor;
 }
+
 - (void)didReceiveMemoryWarning {
     
     [super didReceiveMemoryWarning];

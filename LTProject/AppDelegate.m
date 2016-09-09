@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "LTRootViewController.h"
 #import "LTBaseTabBarViewController.h"
 
 @interface AppDelegate ()

@@ -75,7 +75,6 @@
     viewController.tabBarItem.selectedImage = [UIImage imageNamed:selImageName];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:viewController];
     return nav;
-
 }
 
 - (void)didReceiveMemoryWarning {
