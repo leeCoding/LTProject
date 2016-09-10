@@ -17,6 +17,9 @@ PODS:
   - EAIntroView (2.9.0):
     - EARestrictedScrollView (~> 1.1.0)
   - EARestrictedScrollView (1.1.0)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
   - MJExtension (3.0.11)
   - PhotoTweaks (1.0.3)
   - ReactiveCocoa (4.1.0):
@@ -41,6 +44,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - EAIntroView (~> 2.9.0)
+  - FMDB (~> 2.6.2)
   - MJExtension (~> 3.0.10)
   - PhotoTweaks (~> 1.0.3)
   - ReactiveCocoa (~> 4.1.0)
@@ -52,6 +56,7 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   EAIntroView: 76f68cc56242f2e25359419e6ecc2344ee7e1756
   EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   MJExtension: f9ae6ddc0f1c482c3c9af750280ccebd14381958
   PhotoTweaks: 17a448f451872fd9c3cc65ec5ca125ccd1b48d11
   ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949
@@ -60,6 +65,6 @@ SPEC CHECKSUMS:
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 24ad6217075116fdbf60301407ef3daad6ad117a
+PODFILE CHECKSUM: 860a5d5f4043d244fd09cf3edba88f274f379f86
 
 COCOAPODS: 1.0.1

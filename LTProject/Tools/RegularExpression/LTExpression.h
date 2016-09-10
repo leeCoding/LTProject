@@ -174,4 +174,24 @@
  */
 + (BOOL)lt_isValidateNickname:(NSString *)nickname;
 
+/**
+ *  获取Document路径
+ *
+ *  @return 路径
+ */
++ (NSString *)lt_getDocumentPath;
+
+/**
+ *  获取Library路径
+ *
+ *  @return 路径
+ */
++ (NSString *)lt_getLibraryPath;
+
+/**
+ *  获取Caches路径
+ *
+ *  @return 路径
+ */
++ (NSString *)lt_getCachesPath;
 @end

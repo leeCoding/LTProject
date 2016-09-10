@@ -21,7 +21,7 @@
     
     [self initData];
     
-    [self initView];
+    [self initUI];
 }
 
 #pragma mark - 初始化数据
@@ -30,13 +30,14 @@
 }
 
 #pragma mark - 初始化视图
-- (void)initView {
+- (void)initUI {
     
     self.view.backgroundColor = [UIColor blackColor];
     
-    [self lt_showNoneImageInView:self.view];
-    
-    [self lt_showHUDSuccess:@"Hello"];
+    NSLog(@" 缓存路径：%@",[LTExpression lt_getCachesPath]);
+    NSLog(@" 资源路径：%@",[LTExpression lt_getLibraryPath]);
+    NSLog(@" 文件路径：%@",[LTExpression lt_getDocumentPath]);
+
 }
 
 - (void)didReceiveMemoryWarning {

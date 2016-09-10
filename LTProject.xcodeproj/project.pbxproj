@@ -32,6 +32,7 @@
 		FBE2C88A1D65A6AD00CB701A /* LTPlaySystemSound.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE2C8891D65A6AD00CB701A /* LTPlaySystemSound.m */; };
 		FBFDC86F1D8285EE00D7157C /* NSString+Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFDC86E1D8285EE00D7157C /* NSString+Unit.m */; };
 		FBFDC8731D828E3300D7157C /* NSUserDefaults+Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFDC8721D828E3300D7157C /* NSUserDefaults+Unit.m */; };
+		FBFDC87D1D82BFDB00D7157C /* LTDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFDC87C1D82BFDB00D7157C /* LTDataBase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,8 @@
 		FBFDC86E1D8285EE00D7157C /* NSString+Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Unit.m"; sourceTree = "<group>"; };
 		FBFDC8711D828E3300D7157C /* NSUserDefaults+Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Unit.h"; sourceTree = "<group>"; };
 		FBFDC8721D828E3300D7157C /* NSUserDefaults+Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Unit.m"; sourceTree = "<group>"; };
+		FBFDC87B1D82BFDB00D7157C /* LTDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTDataBase.h; sourceTree = "<group>"; };
+		FBFDC87C1D82BFDB00D7157C /* LTDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTDataBase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +290,7 @@
 		FBCB0B5E1D46186D00DF9D93 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				FBFDC87A1D82BFDB00D7157C /* DAO */,
 				FB4FD2C61D7EC6C8001A8A3F /* Macro */,
 				FBE2C8871D65A69000CB701A /* Sound */,
 				FB54FFCD1D532C4800903F9C /* HttpRequest */,
@@ -334,6 +338,15 @@
 			children = (
 			);
 			path = DateCategory;
+			sourceTree = "<group>";
+		};
+		FBFDC87A1D82BFDB00D7157C /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				FBFDC87B1D82BFDB00D7157C /* LTDataBase.h */,
+				FBFDC87C1D82BFDB00D7157C /* LTDataBase.m */,
+			);
+			path = DAO;
 			sourceTree = "<group>";
 		};
 		FFE6D4DE169E8B83FEACC855 /* Pods */ = {
@@ -473,6 +486,7 @@
 				FB54FFC81D532B7500903F9C /* LTRootViewController.m in Sources */,
 				FBCB0B3B1D460E0700DF9D93 /* ViewController.m in Sources */,
 				FB4FD2E11D7FC4CC001A8A3F /* UIImage+Rotate.m in Sources */,
+				FBFDC87D1D82BFDB00D7157C /* LTDataBase.m in Sources */,
 				FB4FD2E31D7FC4CC001A8A3F /* UIView+Animation.m in Sources */,
 				FB4FD2E91D800C7D001A8A3F /* LTMainViewController.m in Sources */,
 				FB4FD2E01D7FC4CC001A8A3F /* UIImage+Color.m in Sources */,

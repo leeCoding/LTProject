@@ -456,4 +456,35 @@
     return [passWordPredicate evaluateWithObject:nickname];
 }
 
+/**
+ *  获取Document路径
+ *
+ *  @return 路径
+ */
++ (NSString *)lt_getDocumentPath {
+    
+    return NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+}
+
+/**
+ *  获取Library路径
+ *
+ *  @return 路径
+ */
++ (NSString *)lt_getLibraryPath {
+    
+    return NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0];
+}
+
+/**
+ *  获取Caches路径
+ *
+ *  @return 路径
+ */
++ (NSString *)lt_getCachesPath {
+    
+    return NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+}
+
+
 @end
