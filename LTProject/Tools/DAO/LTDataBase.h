@@ -13,4 +13,5 @@
  */
 @interface LTDataBase : NSObject
 
+
 @end

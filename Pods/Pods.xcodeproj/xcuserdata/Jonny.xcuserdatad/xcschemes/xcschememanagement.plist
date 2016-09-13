@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Masonry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>PhotoTweaks.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,6 +72,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>05A8CBD54B39ACFA5A001259B986232B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1A34CE7C2BE4EAB4CF042AE1247D2347</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
 		<dict>
 			<key>primary</key>
@@ -77,17 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>45AB72A1A4E19AE7BFC74C9ADF343BB3</key>
+		<key>3777A090275E25D584E23003EA1E3C12</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>48F974FF2045B25B785E392111230C6E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>53E8E5B2DA216C2828EC47E096B9C39D</key>
+		<key>6222EBDC6AF7FADFD2EB3DC785E44B65</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,17 +107,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>716C257FC765B7391B743807FE09F4D4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7C0126D717EB28DC6DB2EEA2E20B5172</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8DEE0296499B7A88B906B64B8D2C95A5</key>
+		<key>860970EBB21D60A7F55A55AC23E04AF7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9A83F63385AA43314397B8DD375464B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,7 +132,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E870455AFAB123A1D2D896475F4EF0DC</key>
+		<key>E86B7C1CF9A0935AC10B3BF3D17F55F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

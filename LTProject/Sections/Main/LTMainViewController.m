@@ -8,6 +8,8 @@
 
 #import "LTMainViewController.h"
 #import "NSUserDefaults+Unit.h"
+#import "LTTouchID.h"
+#import "LTDateManager.h"
 
 @interface LTMainViewController ()
 
@@ -32,11 +34,84 @@
 #pragma mark - 初始化视图
 - (void)initUI {
     
+    self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = [UIColor blackColor];
     
-    NSLog(@" 缓存路径：%@",[LTExpression lt_getCachesPath]);
-    NSLog(@" 资源路径：%@",[LTExpression lt_getLibraryPath]);
-    NSLog(@" 文件路径：%@",[LTExpression lt_getDocumentPath]);
+    UIImageView *imageView = [[UIImageView alloc]init];
+    imageView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:imageView];
+    
+    UIImageView *imageView1 = [[UIImageView alloc]init];
+    imageView1.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:imageView1];
+    
+    __weak typeof(self) __weakSelf = self;
+    
+    /*  设置固定高 上左下边距为 0
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(__weakSelf.view).with.offset(0);
+        make.left.equalTo(__weakSelf.view).with.offset(0);
+        make.right.equalTo(__weakSelf.view).with.offset(0);
+        make.height.mas_equalTo(@200);
+    }];
+    */
+    
+    /*  固定宽高 居中显示
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.center.equalTo(__weakSelf.view);
+        make.size.mas_equalTo(CGSizeMake(200, 200));
+        
+    }];
+    */
+    
+    /*  设置固定高 上左下边距为 0
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.bottom.equalTo(__weakSelf.view).with.offset(0);
+        make.left.equalTo(__weakSelf.view).with.offset(0);
+        make.right.equalTo(__weakSelf.view).with.offset(0);
+        make.height.equalTo(@200);
+    }];
+    */
+    
+    /*  距离上左下右 10 10 10 10
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_offset(UIEdgeInsetsMake(10, 10, 59, 10));
+    }];
+    */
+    
+    
+    /* 两个视图之间布局
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.top.equalTo(__weakSelf.view).with.offset(0);
+        make.left.equalTo(__weakSelf.view).with.offset(0);
+        make.right.equalTo(__weakSelf.view).with.offset(0);
+        make.height.equalTo(@200);
+    }];
+    */
+    
+    /*
+    [imageView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.equalTo(imageView.mas_bottom).with.offset(10);
+        make.centerX.equalTo(imageView);
+        make.size.mas_equalTo(CGSizeMake(200, 200));
+    }];
+    */
+    
+    NSLog(@" %@",[LTDateManager lt_getNowDate]);
+    NSLog(@" %@",[LTDateManager lt_getNowYear]);
+    NSLog(@" %@",[LTDateManager lt_getNowYearAndMonth]);
+    NSLog(@" %@",[LTDateManager lt_getNowYearAndMonthDay]);
+    NSLog(@" %@",[LTDateManager lt_getNowHourAndMinuteSecond]);
+    
+    NSLog(@" %@",[LTDateManager lt_getTimestamp]);
+    
+    NSLog(@" %@",[LTDateManager lt_timestampWithTimeStandard:[LTDateManager lt_getTimestamp]]);
+    
+    NSLog(@" %@",[LTDateManager lt_timeStandardWithTimestamp:@"2016-09-13 15:09:00"]);
 
 }
 

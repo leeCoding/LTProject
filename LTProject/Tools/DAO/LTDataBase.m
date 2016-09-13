@@ -8,6 +8,22 @@
 
 #import "LTDataBase.h"
 
+static LTDataBase *dataBase = nil;
+
 @implementation LTDataBase
+
++ (LTDataBase *)shareDataBase {
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        dataBase = [[self alloc]init];
+    });
+    return dataBase;
+}
+
++ (void)createDataBase:(NSString *)dataBaseName {
+    
+    
+}
 
 @end
