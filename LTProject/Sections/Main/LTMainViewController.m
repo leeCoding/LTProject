@@ -35,7 +35,7 @@
 - (void)initUI {
     
     self.navigationController.navigationBar.translucent = NO;
-    self.view.backgroundColor = [UIColor blackColor];
+//    self.view.backgroundColor = [UIColor blackColor];
     
     UIImageView *imageView = [[UIImageView alloc]init];
     imageView.backgroundColor = [UIColor whiteColor];
@@ -45,7 +45,8 @@
     imageView1.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:imageView1];
     
-    __weak typeof(self) __weakSelf = self;
+   
+//    __weak typeof(self) __weakSelf = self;
     
     /*  设置固定高 上左下边距为 0
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -81,7 +82,6 @@
     }];
     */
     
-    
     /* 两个视图之间布局
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -101,18 +101,17 @@
     }];
     */
     
+    /*
     NSLog(@" %@",[LTDateManager lt_getNowDate]);
     NSLog(@" %@",[LTDateManager lt_getNowYear]);
     NSLog(@" %@",[LTDateManager lt_getNowYearAndMonth]);
     NSLog(@" %@",[LTDateManager lt_getNowYearAndMonthDay]);
     NSLog(@" %@",[LTDateManager lt_getNowHourAndMinuteSecond]);
-    
     NSLog(@" %@",[LTDateManager lt_getTimestamp]);
-    
     NSLog(@" %@",[LTDateManager lt_timestampWithTimeStandard:[LTDateManager lt_getTimestamp]]);
-    
     NSLog(@" %@",[LTDateManager lt_timeStandardWithTimestamp:@"2016-09-13 15:09:00"]);
-
+    */
+    
 }
 
 - (void)didReceiveMemoryWarning {
