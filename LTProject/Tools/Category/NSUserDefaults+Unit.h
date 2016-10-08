@@ -16,7 +16,7 @@
 /**
  *  同步
  */
-+(void)lt_synchronize;
++ (void)lt_synchronize;
 
 /* 存Bool */
 + (void)lt_setBool:(BOOL)values key:(NSString *)key;

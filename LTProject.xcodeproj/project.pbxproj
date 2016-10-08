@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A991BE42EBB593B91FAF3952 /* Pods_LTProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C2955AA4368D4F3669743B /* Pods_LTProject.framework */; };
 		FB13E1F81D5AD9CD0089C621 /* LTWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB13E1F71D5AD9CD0089C621 /* LTWaitingView.m */; };
+		FB3711851DA8D535003CB825 /* UIGestureRecognizer+Action.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3711841DA8D535003CB825 /* UIGestureRecognizer+Action.m */; };
 		FB45ECE61D865C3E00262199 /* LTTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = FB45ECE51D865C3E00262199 /* LTTouchID.m */; };
 		FB45ECE91D869DBD00262199 /* LTSortingAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = FB45ECE81D869DBD00262199 /* LTSortingAlgorithm.m */; };
 		FB4FD2C51D7EC4FF001A8A3F /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = FB4FD2C41D7EC4FF001A8A3F /* 8.png */; };
@@ -45,6 +46,8 @@
 		E6C2955AA4368D4F3669743B /* Pods_LTProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB13E1F61D5AD9CD0089C621 /* LTWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTWaitingView.h; sourceTree = "<group>"; };
 		FB13E1F71D5AD9CD0089C621 /* LTWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTWaitingView.m; sourceTree = "<group>"; };
+		FB3711831DA8D535003CB825 /* UIGestureRecognizer+Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Action.h"; sourceTree = "<group>"; };
+		FB3711841DA8D535003CB825 /* UIGestureRecognizer+Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Action.m"; sourceTree = "<group>"; };
 		FB45ECE41D865C3E00262199 /* LTTouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTouchID.h; sourceTree = "<group>"; };
 		FB45ECE51D865C3E00262199 /* LTTouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTouchID.m; sourceTree = "<group>"; };
 		FB45ECE71D869DBD00262199 /* LTSortingAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSortingAlgorithm.h; sourceTree = "<group>"; };
@@ -119,6 +122,15 @@
 				E6C2955AA4368D4F3669743B /* Pods_LTProject.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB3711821DA8D535003CB825 /* GestureCategory */ = {
+			isa = PBXGroup;
+			children = (
+				FB3711831DA8D535003CB825 /* UIGestureRecognizer+Action.h */,
+				FB3711841DA8D535003CB825 /* UIGestureRecognizer+Action.m */,
+			);
+			path = GestureCategory;
 			sourceTree = "<group>";
 		};
 		FB4FD2C31D7EC4FF001A8A3F /* Image */ = {
@@ -325,6 +337,7 @@
 				FB4FD2ED1D811216001A8A3F /* ViewControllerCategory */,
 				FB4FD2D21D7FC4CC001A8A3F /* ImageCategory */,
 				FB4FD2D91D7FC4CC001A8A3F /* ViewCategory */,
+				FB3711821DA8D535003CB825 /* GestureCategory */,
 				FBFDC86D1D8285EE00D7157C /* NSString+Unit.h */,
 				FBFDC86E1D8285EE00D7157C /* NSString+Unit.m */,
 				FBFDC8711D828E3300D7157C /* NSUserDefaults+Unit.h */,
@@ -511,6 +524,7 @@
 				FB4FD2E31D7FC4CC001A8A3F /* UIView+Animation.m in Sources */,
 				FB6B37201D87CB4700F7B83F /* LTDateManager.m in Sources */,
 				FB4FD2E91D800C7D001A8A3F /* LTMainViewController.m in Sources */,
+				FB3711851DA8D535003CB825 /* UIGestureRecognizer+Action.m in Sources */,
 				FB4FD2E01D7FC4CC001A8A3F /* UIImage+Color.m in Sources */,
 				FBCB0B711D47144000DF9D93 /* LTExpression.m in Sources */,
 				FBCB0B381D460E0700DF9D93 /* AppDelegate.m in Sources */,

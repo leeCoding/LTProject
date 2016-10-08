@@ -45,7 +45,6 @@
     imageView1.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:imageView1];
     
-   
 //    __weak typeof(self) __weakSelf = self;
     
     /*  设置固定高 上左下边距为 0
@@ -112,6 +111,8 @@
     NSLog(@" %@",[LTDateManager lt_timeStandardWithTimestamp:@"2016-09-13 15:09:00"]);
     */
     
+    self.view.backgroundColor = [UIColor colorWithDisplayP3Red:100/255.f green:100/255.f blue:100/255.f alpha:1];
+   
 }
 
 - (void)didReceiveMemoryWarning {

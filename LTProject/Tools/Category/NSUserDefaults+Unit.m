@@ -84,6 +84,7 @@
 + (NSData *)dataForKey:(NSString *)key {
     return [[NSUserDefaults standardUserDefaults] dataForKey:key];
 }
+
 /**
  *  清除对象
  *
