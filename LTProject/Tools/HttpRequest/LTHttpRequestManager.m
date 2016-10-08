@@ -44,6 +44,7 @@
 + (void)lt_get:(NSString *)url parame:(NSDictionary *)parame success:(void(^)(NSDictionary *result))success failure:(void(^)(NSString *msg))failure {
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
     [manager GET:url parameters:parame progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

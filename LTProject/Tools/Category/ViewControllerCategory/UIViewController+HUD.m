@@ -7,17 +7,33 @@
 //
 
 #import "UIViewController+HUD.h"
+#import "UIGestureRecognizer+Action.h"
+
 #import <objc/message.h>
 
 static const void *kHud = @"k_labelHud";
+static const void *kTapG = @"k_TapG";
+static const void *kProTapG = @"k_Pro_TapG";
 
 @interface UIViewController ()
 
 @property (nonatomic,strong)UILabel *labelHud;
+@property (nonatomic,strong)UITapGestureRecognizer *tapGestureBlock;
 
 @end
 
 @implementation UIViewController (HUD)
+
+
+- (void)setTapGestureBlock:(UITapGestureRecognizer *)tapGestureBlock {
+    
+    objc_setAssociatedObject(self, &kProTapG, tapGestureBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UITapGestureRecognizer *)tapGestureBlock {
+    
+    return  objc_getAssociatedObject(self, &kProTapG);
+}
 
 - (UILabel *)labelHud {
     
@@ -31,20 +47,39 @@ static const void *kHud = @"k_labelHud";
         
         objc_setAssociatedObject(self, &kHud, subhud, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
+    
     return subhud;
 }
 
 #pragma mark - 显示状态
-- (void)showStatus:(NSString *)status {
+- (void)showStatus:(NSString *)status tapViewWithBlock:(tapViewWithBlock)block {
     
     if (status == nil) {
         return;
     }
+    
     self.labelHud.text = status;
+    
+    if (block) {
+        
+        objc_setAssociatedObject(self, &kTapG, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    }
+    
+    self.tapGestureBlock = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBlock)];
+    [self.view addGestureRecognizer:self.tapGestureBlock];
 }
 
+// 回调
+- (void)tapBlock {
+    
+    tapViewWithBlock block = objc_getAssociatedObject(self, &kTapG);
+    if (block) {
+        block();
+    }
+}
 #pragma mark - 消失
 - (void)hide {
+    
     if (self.labelHud) {
         
         __weak typeof(self) __weakSelf = self;
@@ -54,5 +89,7 @@ static const void *kHud = @"k_labelHud";
             [__weakSelf.labelHud removeFromSuperview];
         }];
     }
+    
+    [self.view removeGestureRecognizer: self.tapGestureBlock];
 }
 @end

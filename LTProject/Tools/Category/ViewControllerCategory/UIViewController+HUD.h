@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^tapViewWithBlock)();
+
 @interface UIViewController (HUD)
 
 /// 显示状态
-- (void)showStatus:(NSString *)status;
+- (void)showStatus:(NSString *)status tapViewWithBlock:(tapViewWithBlock)block;
 
 /// 消失
 - (void)hide;
+
 
 @end

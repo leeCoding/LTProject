@@ -10,6 +10,7 @@
 #import "NSUserDefaults+Unit.h"
 #import "LTTouchID.h"
 #import "LTDateManager.h"
+#import "LTHttpRequestManager.h"
 
 @interface LTMainViewController ()
 
@@ -113,6 +114,14 @@
     
     self.view.backgroundColor = [UIColor colorWithDisplayP3Red:100/255.f green:100/255.f blue:100/255.f alpha:1];
    
+    [self showStatus:@"点击重新加载" tapViewWithBlock:^{
+        
+        NSLog(@"重新加载");
+    }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self hide];
+    });
 }
 
 - (void)didReceiveMemoryWarning {

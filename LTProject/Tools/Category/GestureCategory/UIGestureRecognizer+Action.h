@@ -15,4 +15,6 @@ typedef void(^lt_GestureRecognizer)(id  gestureRecognizer);
 
 + (instancetype)lt_gestureRecognizerWithBlock:(lt_GestureRecognizer)block;
 
+- (instancetype)initGestureRecognizerWithBlock:(lt_GestureRecognizer)block;
+
 @end
