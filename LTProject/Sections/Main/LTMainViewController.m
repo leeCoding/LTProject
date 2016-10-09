@@ -11,6 +11,7 @@
 #import "LTTouchID.h"
 #import "LTDateManager.h"
 #import "LTHttpRequestManager.h"
+#import "LTStarView.h"
 
 @interface LTMainViewController ()
 
@@ -113,15 +114,39 @@
     */
     
     self.view.backgroundColor = [UIColor colorWithDisplayP3Red:100/255.f green:100/255.f blue:100/255.f alpha:1];
-   
-    [self showStatus:@"点击重新加载" tapViewWithBlock:^{
-        
-        NSLog(@"重新加载");
-    }];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self hide];
-    });
+    /*
+    [LTHttpRequestManager lt_get:@"http://app.4567cn.com/api/index.php?method=get_news_list&page_no=0&catid=2&category=0" parame:nil success:^(NSDictionary *result) {
+       
+        NSLog(@"%@",result);
+        
+    } failure:^(NSString *msg) {
+        
+    }];
+    */
+    
+    LTStarView *starView = [[LTStarView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 100) clickBtn:^(NSString *score) {
+        NSLog(@" 分数 %@",score);
+    }];
+    [self.view addSubview:starView];
+}
+
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
+    if(err) {
+        
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    
+    return dic;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+/// 点击主屏幕回调
 typedef void(^tapViewWithBlock)();
 
 @interface UIViewController (HUD)
 
-/// 显示状态
+/// 显示状态 点击屏幕时回调 Show status, Click When screen call block
 - (void)showStatus:(NSString *)status tapViewWithBlock:(tapViewWithBlock)block;
 
-/// 消失
+/// 消失 Hide tips
 - (void)hide;
-
 
 @end

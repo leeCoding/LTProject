@@ -7,8 +7,6 @@
 //
 
 #import "UIViewController+HUD.h"
-#import "UIGestureRecognizer+Action.h"
-
 #import <objc/message.h>
 
 static const void *kHud = @"k_labelHud";
@@ -51,7 +49,7 @@ static const void *kProTapG = @"k_Pro_TapG";
     return subhud;
 }
 
-#pragma mark - 显示状态
+#pragma mark - 显示状态 Show status
 - (void)showStatus:(NSString *)status tapViewWithBlock:(tapViewWithBlock)block {
     
     if (status == nil) {
@@ -65,11 +63,12 @@ static const void *kProTapG = @"k_Pro_TapG";
         objc_setAssociatedObject(self, &kTapG, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
     }
     
+    // 添加全屏手势
     self.tapGestureBlock = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBlock)];
     [self.view addGestureRecognizer:self.tapGestureBlock];
 }
 
-// 回调
+#pragma mark - 回调  Click return
 - (void)tapBlock {
     
     tapViewWithBlock block = objc_getAssociatedObject(self, &kTapG);
@@ -77,7 +76,7 @@ static const void *kProTapG = @"k_Pro_TapG";
         block();
     }
 }
-#pragma mark - 消失
+#pragma mark - 消失 Tips hide
 - (void)hide {
     
     if (self.labelHud) {

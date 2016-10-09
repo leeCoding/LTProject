@@ -18,6 +18,7 @@ static LTDataBase *dataBase = nil;
     dispatch_once(&onceToken, ^{
         dataBase = [[self alloc]init];
     });
+    
     return dataBase;
 }
 

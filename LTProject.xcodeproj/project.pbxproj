@@ -10,6 +10,7 @@
 		A991BE42EBB593B91FAF3952 /* Pods_LTProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C2955AA4368D4F3669743B /* Pods_LTProject.framework */; };
 		FB13E1F81D5AD9CD0089C621 /* LTWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB13E1F71D5AD9CD0089C621 /* LTWaitingView.m */; };
 		FB3711851DA8D535003CB825 /* UIGestureRecognizer+Action.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3711841DA8D535003CB825 /* UIGestureRecognizer+Action.m */; };
+		FB3711881DA9E289003CB825 /* LTStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3711871DA9E289003CB825 /* LTStarView.m */; };
 		FB45ECE61D865C3E00262199 /* LTTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = FB45ECE51D865C3E00262199 /* LTTouchID.m */; };
 		FB45ECE91D869DBD00262199 /* LTSortingAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = FB45ECE81D869DBD00262199 /* LTSortingAlgorithm.m */; };
 		FB4FD2C51D7EC4FF001A8A3F /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = FB4FD2C41D7EC4FF001A8A3F /* 8.png */; };
@@ -25,6 +26,8 @@
 		FB54FFC91D532B7500903F9C /* LTRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB54FFC61D532B7500903F9C /* LTRootViewController.xib */; };
 		FB54FFCC1D532BF500903F9C /* LTBaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB54FFCB1D532BF500903F9C /* LTBaseTabBarViewController.m */; };
 		FB54FFD01D532C6A00903F9C /* LTHttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB54FFCF1D532C6A00903F9C /* LTHttpRequestManager.m */; };
+		FB6A99D01DAA2B6300EBCED1 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = FB6A99CE1DAA2B6300EBCED1 /* 12.png */; };
+		FB6A99D11DAA2B6300EBCED1 /* 21.png in Resources */ = {isa = PBXBuildFile; fileRef = FB6A99CF1DAA2B6300EBCED1 /* 21.png */; };
 		FB6B37201D87CB4700F7B83F /* LTDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6B371F1D87CB4700F7B83F /* LTDateManager.m */; };
 		FB8E7BA11D9BA87D00A91116 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E7BA01D9BA87D00A91116 /* UIViewController+HUD.m */; };
 		FBCB0B351D460E0700DF9D93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB0B341D460E0700DF9D93 /* main.m */; };
@@ -48,6 +51,8 @@
 		FB13E1F71D5AD9CD0089C621 /* LTWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTWaitingView.m; sourceTree = "<group>"; };
 		FB3711831DA8D535003CB825 /* UIGestureRecognizer+Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Action.h"; sourceTree = "<group>"; };
 		FB3711841DA8D535003CB825 /* UIGestureRecognizer+Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Action.m"; sourceTree = "<group>"; };
+		FB3711861DA9E289003CB825 /* LTStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTStarView.h; sourceTree = "<group>"; };
+		FB3711871DA9E289003CB825 /* LTStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTStarView.m; sourceTree = "<group>"; };
 		FB45ECE41D865C3E00262199 /* LTTouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTouchID.h; sourceTree = "<group>"; };
 		FB45ECE51D865C3E00262199 /* LTTouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTouchID.m; sourceTree = "<group>"; };
 		FB45ECE71D869DBD00262199 /* LTSortingAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSortingAlgorithm.h; sourceTree = "<group>"; };
@@ -78,6 +83,8 @@
 		FB54FFCB1D532BF500903F9C /* LTBaseTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTBaseTabBarViewController.m; sourceTree = "<group>"; };
 		FB54FFCE1D532C6A00903F9C /* LTHttpRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTHttpRequestManager.h; sourceTree = "<group>"; };
 		FB54FFCF1D532C6A00903F9C /* LTHttpRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTHttpRequestManager.m; sourceTree = "<group>"; };
+		FB6A99CE1DAA2B6300EBCED1 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
+		FB6A99CF1DAA2B6300EBCED1 /* 21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 21.png; sourceTree = "<group>"; };
 		FB6B371E1D87CB4700F7B83F /* LTDateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTDateManager.h; sourceTree = "<group>"; };
 		FB6B371F1D87CB4700F7B83F /* LTDateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTDateManager.m; sourceTree = "<group>"; };
 		FB8E7B9F1D9BA87D00A91116 /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = "<group>"; };
@@ -178,8 +185,12 @@
 		FB4FD2E61D800C62001A8A3F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FB6A99CE1DAA2B6300EBCED1 /* 12.png */,
+				FB6A99CF1DAA2B6300EBCED1 /* 21.png */,
 				FB4FD2E71D800C7D001A8A3F /* LTMainViewController.h */,
 				FB4FD2E81D800C7D001A8A3F /* LTMainViewController.m */,
+				FB3711861DA9E289003CB825 /* LTStarView.h */,
+				FB3711871DA9E289003CB825 /* LTStarView.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -452,9 +463,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB6A99D01DAA2B6300EBCED1 /* 12.png in Resources */,
 				FB4FD2C51D7EC4FF001A8A3F /* 8.png in Resources */,
 				FB54FFC91D532B7500903F9C /* LTRootViewController.xib in Resources */,
 				FBCB0B431D460E0700DF9D93 /* LaunchScreen.storyboard in Resources */,
+				FB6A99D11DAA2B6300EBCED1 /* 21.png in Resources */,
 				FBCB0B401D460E0700DF9D93 /* Assets.xcassets in Resources */,
 				FBCB0B3E1D460E0700DF9D93 /* Main.storyboard in Resources */,
 			);
@@ -519,6 +532,7 @@
 				FB54FFC81D532B7500903F9C /* LTRootViewController.m in Sources */,
 				FB45ECE91D869DBD00262199 /* LTSortingAlgorithm.m in Sources */,
 				FBCB0B3B1D460E0700DF9D93 /* ViewController.m in Sources */,
+				FB3711881DA9E289003CB825 /* LTStarView.m in Sources */,
 				FB4FD2E11D7FC4CC001A8A3F /* UIImage+Rotate.m in Sources */,
 				FBFDC87D1D82BFDB00D7157C /* LTDataBase.m in Sources */,
 				FB4FD2E31D7FC4CC001A8A3F /* UIView+Animation.m in Sources */,
