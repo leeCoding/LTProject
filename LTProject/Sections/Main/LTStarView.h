@@ -17,4 +17,6 @@ typedef void(^clickBtn)(NSString *score);
  */
 - (instancetype)initWithFrame:(CGRect)frame clickBtn:(clickBtn)Block;
 
++ (instancetype)initStarViewFrame:(CGRect)rect clickBtn:(clickBtn)Block;
+
 @end

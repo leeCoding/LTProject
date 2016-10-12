@@ -25,9 +25,9 @@
 }
 */
 
-+ (instancetype)initStarViewFrame:(CGRect)rect {
++ (instancetype)initStarViewFrame:(CGRect)rect clickBtn:(clickBtn)Block {
     
-    return [[self alloc]initWithFrame:rect];
+    return [[self alloc]initWithFrame:rect clickBtn:Block];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame clickBtn:(clickBtn)Block {

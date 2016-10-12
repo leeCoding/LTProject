@@ -30,6 +30,9 @@
 		FB6A99D11DAA2B6300EBCED1 /* 21.png in Resources */ = {isa = PBXBuildFile; fileRef = FB6A99CF1DAA2B6300EBCED1 /* 21.png */; };
 		FB6B37201D87CB4700F7B83F /* LTDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6B371F1D87CB4700F7B83F /* LTDateManager.m */; };
 		FB8E7BA11D9BA87D00A91116 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E7BA01D9BA87D00A91116 /* UIViewController+HUD.m */; };
+		FBC681ED1DADE3E600AD3B81 /* LT3DTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC681EB1DADE3E600AD3B81 /* LT3DTouchViewController.m */; };
+		FBC681EE1DADE3E600AD3B81 /* LT3DTouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC681EC1DADE3E600AD3B81 /* LT3DTouchViewController.xib */; };
+		FBC681F11DADE47800AD3B81 /* AppDelegate+_DTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC681F01DADE47800AD3B81 /* AppDelegate+_DTouch.m */; };
 		FBCB0B351D460E0700DF9D93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB0B341D460E0700DF9D93 /* main.m */; };
 		FBCB0B381D460E0700DF9D93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB0B371D460E0700DF9D93 /* AppDelegate.m */; };
 		FBCB0B3B1D460E0700DF9D93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB0B3A1D460E0700DF9D93 /* ViewController.m */; };
@@ -89,6 +92,11 @@
 		FB6B371F1D87CB4700F7B83F /* LTDateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTDateManager.m; sourceTree = "<group>"; };
 		FB8E7B9F1D9BA87D00A91116 /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = "<group>"; };
 		FB8E7BA01D9BA87D00A91116 /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
+		FBC681EA1DADE3E600AD3B81 /* LT3DTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LT3DTouchViewController.h; sourceTree = "<group>"; };
+		FBC681EB1DADE3E600AD3B81 /* LT3DTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LT3DTouchViewController.m; sourceTree = "<group>"; };
+		FBC681EC1DADE3E600AD3B81 /* LT3DTouchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LT3DTouchViewController.xib; sourceTree = "<group>"; };
+		FBC681EF1DADE47800AD3B81 /* AppDelegate+_DTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+_DTouch.h"; sourceTree = "<group>"; };
+		FBC681F01DADE47800AD3B81 /* AppDelegate+_DTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+_DTouch.m"; sourceTree = "<group>"; };
 		FBCB0B301D460E0700DF9D93 /* LTProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCB0B341D460E0700DF9D93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBCB0B361D460E0700DF9D93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -261,6 +269,16 @@
 			path = HttpRequest;
 			sourceTree = "<group>";
 		};
+		FBC681E91DADE3AF00AD3B81 /* 3DTouch */ = {
+			isa = PBXGroup;
+			children = (
+				FBC681EA1DADE3E600AD3B81 /* LT3DTouchViewController.h */,
+				FBC681EB1DADE3E600AD3B81 /* LT3DTouchViewController.m */,
+				FBC681EC1DADE3E600AD3B81 /* LT3DTouchViewController.xib */,
+			);
+			path = 3DTouch;
+			sourceTree = "<group>";
+		};
 		FBCB0B271D460E0700DF9D93 = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +302,8 @@
 			children = (
 				FBCB0B361D460E0700DF9D93 /* AppDelegate.h */,
 				FBCB0B371D460E0700DF9D93 /* AppDelegate.m */,
+				FBC681EF1DADE47800AD3B81 /* AppDelegate+_DTouch.h */,
+				FBC681F01DADE47800AD3B81 /* AppDelegate+_DTouch.m */,
 				FBCB0B391D460E0700DF9D93 /* ViewController.h */,
 				FBCB0B3A1D460E0700DF9D93 /* ViewController.m */,
 				FBCB0B591D46186D00DF9D93 /* Sections */,
@@ -311,6 +331,7 @@
 		FBCB0B591D46186D00DF9D93 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				FBC681E91DADE3AF00AD3B81 /* 3DTouch */,
 				FB54FFC01D532B7500903F9C /* Base */,
 				FB4FD2E61D800C62001A8A3F /* Main */,
 			);
@@ -431,7 +452,7 @@
 		FBCB0B281D460E0700DF9D93 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "上海众盟软件科技股份有限公司";
 				TargetAttributes = {
 					FBCB0B2F1D460E0700DF9D93 = {
@@ -468,6 +489,7 @@
 				FB54FFC91D532B7500903F9C /* LTRootViewController.xib in Resources */,
 				FBCB0B431D460E0700DF9D93 /* LaunchScreen.storyboard in Resources */,
 				FB6A99D11DAA2B6300EBCED1 /* 21.png in Resources */,
+				FBC681EE1DADE3E600AD3B81 /* LT3DTouchViewController.xib in Resources */,
 				FBCB0B401D460E0700DF9D93 /* Assets.xcassets in Resources */,
 				FBCB0B3E1D460E0700DF9D93 /* Main.storyboard in Resources */,
 			);
@@ -537,6 +559,7 @@
 				FBFDC87D1D82BFDB00D7157C /* LTDataBase.m in Sources */,
 				FB4FD2E31D7FC4CC001A8A3F /* UIView+Animation.m in Sources */,
 				FB6B37201D87CB4700F7B83F /* LTDateManager.m in Sources */,
+				FBC681F11DADE47800AD3B81 /* AppDelegate+_DTouch.m in Sources */,
 				FB4FD2E91D800C7D001A8A3F /* LTMainViewController.m in Sources */,
 				FB3711851DA8D535003CB825 /* UIGestureRecognizer+Action.m in Sources */,
 				FB4FD2E01D7FC4CC001A8A3F /* UIImage+Color.m in Sources */,
@@ -549,6 +572,7 @@
 				FB4FD2F01D811216001A8A3F /* UIViewController+Utils.m in Sources */,
 				FBFDC86F1D8285EE00D7157C /* NSString+Unit.m in Sources */,
 				FB8E7BA11D9BA87D00A91116 /* UIViewController+HUD.m in Sources */,
+				FBC681ED1DADE3E600AD3B81 /* LT3DTouchViewController.m in Sources */,
 				FB54FFD01D532C6A00903F9C /* LTHttpRequestManager.m in Sources */,
 				FB45ECE61D865C3E00262199 /* LTTouchID.m in Sources */,
 				FBCB0B351D460E0700DF9D93 /* main.m in Sources */,
@@ -593,8 +617,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -638,8 +664,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -667,6 +695,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 41C08CD8EF394B56335827C2 /* Pods-LTProject.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -684,6 +713,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2FFB3BCA37C8FE392CA79912 /* Pods-LTProject.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

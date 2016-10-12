@@ -12,6 +12,7 @@
 #import "LTDateManager.h"
 #import "LTHttpRequestManager.h"
 #import "LTStarView.h"
+#import "LT3DTouchViewController.h"
 
 @interface LTMainViewController ()
 
@@ -39,6 +40,8 @@
     self.navigationController.navigationBar.translucent = NO;
 //    self.view.backgroundColor = [UIColor blackColor];
     
+    [self addObserver];
+    
     UIImageView *imageView = [[UIImageView alloc]init];
     imageView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:imageView];
@@ -48,7 +51,7 @@
     [self.view addSubview:imageView1];
     
 //    __weak typeof(self) __weakSelf = self;
-    
+
     /*  设置固定高 上左下边距为 0
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(__weakSelf.view).with.offset(0);
@@ -115,16 +118,6 @@
     
     self.view.backgroundColor = [UIColor colorWithDisplayP3Red:100/255.f green:100/255.f blue:100/255.f alpha:1];
     
-    /*
-    [LTHttpRequestManager lt_get:@"http://app.4567cn.com/api/index.php?method=get_news_list&page_no=0&catid=2&category=0" parame:nil success:^(NSDictionary *result) {
-       
-        NSLog(@"%@",result);
-        
-    } failure:^(NSString *msg) {
-        
-    }];
-    */
-    
     LTStarView *starView = [[LTStarView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 100) clickBtn:^(NSString *score) {
         NSLog(@" 分数 %@",score);
     }];
@@ -140,6 +133,7 @@
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     NSError *err;
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
+    
     if(err) {
         
         NSLog(@"json解析失败：%@",err);
@@ -147,6 +141,22 @@
     }
     
     return dic;
+}
+
+#pragma mark - 添加观察者
+- (void)addObserver {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goTo:) name:@"goTo3DTouch" object:nil];
+}
+
+- (void)goTo:(NSNotification *)not {
+    
+    if ([not.userInfo[@"type"] isEqualToString:@"1"]) {
+        
+        LT3DTouchViewController *touch = [LT3DTouchViewController new];
+        touch.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:touch animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
