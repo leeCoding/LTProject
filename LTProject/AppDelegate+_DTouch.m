@@ -10,7 +10,6 @@
 
 @implementation AppDelegate (_DTouch)
 
-
 - (void)create3DTouch {
     
     // 图标

@@ -76,6 +76,7 @@ static const void *kProTapG = @"k_Pro_TapG";
         block();
     }
 }
+
 #pragma mark - 消失 Tips hide
 - (void)hide {
     

@@ -255,6 +255,7 @@ NSString * const ID = @"cycleCell";
     [self invalidateTimer];
     
     if (_autoScroll) {
+        
         [self setupTimer];
     }
 }
@@ -421,6 +422,7 @@ NSString * const ID = @"cycleCell";
     int targetIndex = currentIndex + 1;
     if (targetIndex >= _totalItemsCount) {
         if (self.infiniteLoop) {
+            
             targetIndex = _totalItemsCount * 0.5;
             [_mainView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
         }
@@ -527,11 +529,8 @@ NSString * const ID = @"cycleCell";
     }
 }
 
-
 #pragma mark - UICollectionViewDataSource
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _totalItemsCount;
 }
 
@@ -584,9 +583,7 @@ NSString * const ID = @"cycleCell";
     }
 }
 
-
 #pragma mark - UIScrollViewDelegate
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (!self.imagePathsGroup.count) return; // 解决清除timer时偶尔会出现的问题

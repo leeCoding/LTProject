@@ -33,6 +33,9 @@
 		FBC681ED1DADE3E600AD3B81 /* LT3DTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC681EB1DADE3E600AD3B81 /* LT3DTouchViewController.m */; };
 		FBC681EE1DADE3E600AD3B81 /* LT3DTouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC681EC1DADE3E600AD3B81 /* LT3DTouchViewController.xib */; };
 		FBC681F11DADE47800AD3B81 /* AppDelegate+_DTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC681F01DADE47800AD3B81 /* AppDelegate+_DTouch.m */; };
+		FBC681F91DAF5F6300AD3B81 /* LTCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC681F81DAF5F6300AD3B81 /* LTCarouselView.m */; };
+		FBC681FC1DAF65D200AD3B81 /* LTCarouseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC681FB1DAF65D200AD3B81 /* LTCarouseCollectionViewCell.m */; };
+		FBC681FF1DB0A45600AD3B81 /* LTPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC681FE1DB0A45600AD3B81 /* LTPageControl.m */; };
 		FBCB0B351D460E0700DF9D93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB0B341D460E0700DF9D93 /* main.m */; };
 		FBCB0B381D460E0700DF9D93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB0B371D460E0700DF9D93 /* AppDelegate.m */; };
 		FBCB0B3B1D460E0700DF9D93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB0B3A1D460E0700DF9D93 /* ViewController.m */; };
@@ -97,6 +100,12 @@
 		FBC681EC1DADE3E600AD3B81 /* LT3DTouchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LT3DTouchViewController.xib; sourceTree = "<group>"; };
 		FBC681EF1DADE47800AD3B81 /* AppDelegate+_DTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+_DTouch.h"; sourceTree = "<group>"; };
 		FBC681F01DADE47800AD3B81 /* AppDelegate+_DTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+_DTouch.m"; sourceTree = "<group>"; };
+		FBC681F71DAF5F6300AD3B81 /* LTCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarouselView.h; sourceTree = "<group>"; };
+		FBC681F81DAF5F6300AD3B81 /* LTCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarouselView.m; sourceTree = "<group>"; };
+		FBC681FA1DAF65D200AD3B81 /* LTCarouseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarouseCollectionViewCell.h; sourceTree = "<group>"; };
+		FBC681FB1DAF65D200AD3B81 /* LTCarouseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarouseCollectionViewCell.m; sourceTree = "<group>"; };
+		FBC681FD1DB0A45600AD3B81 /* LTPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPageControl.h; sourceTree = "<group>"; };
+		FBC681FE1DB0A45600AD3B81 /* LTPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTPageControl.m; sourceTree = "<group>"; };
 		FBCB0B301D460E0700DF9D93 /* LTProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCB0B341D460E0700DF9D93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBCB0B361D460E0700DF9D93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -279,6 +288,19 @@
 			path = 3DTouch;
 			sourceTree = "<group>";
 		};
+		FBC681F61DAF5F1000AD3B81 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				FBC681F71DAF5F6300AD3B81 /* LTCarouselView.h */,
+				FBC681F81DAF5F6300AD3B81 /* LTCarouselView.m */,
+				FBC681FA1DAF65D200AD3B81 /* LTCarouseCollectionViewCell.h */,
+				FBC681FB1DAF65D200AD3B81 /* LTCarouseCollectionViewCell.m */,
+				FBC681FD1DB0A45600AD3B81 /* LTPageControl.h */,
+				FBC681FE1DB0A45600AD3B81 /* LTPageControl.m */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		FBCB0B271D460E0700DF9D93 = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +363,7 @@
 		FBCB0B5D1D46186D00DF9D93 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				FBC681F61DAF5F1000AD3B81 /* Component */,
 			);
 			path = Third;
 			sourceTree = "<group>";
@@ -556,10 +579,12 @@
 				FBCB0B3B1D460E0700DF9D93 /* ViewController.m in Sources */,
 				FB3711881DA9E289003CB825 /* LTStarView.m in Sources */,
 				FB4FD2E11D7FC4CC001A8A3F /* UIImage+Rotate.m in Sources */,
+				FBC681F91DAF5F6300AD3B81 /* LTCarouselView.m in Sources */,
 				FBFDC87D1D82BFDB00D7157C /* LTDataBase.m in Sources */,
 				FB4FD2E31D7FC4CC001A8A3F /* UIView+Animation.m in Sources */,
 				FB6B37201D87CB4700F7B83F /* LTDateManager.m in Sources */,
 				FBC681F11DADE47800AD3B81 /* AppDelegate+_DTouch.m in Sources */,
+				FBC681FC1DAF65D200AD3B81 /* LTCarouseCollectionViewCell.m in Sources */,
 				FB4FD2E91D800C7D001A8A3F /* LTMainViewController.m in Sources */,
 				FB3711851DA8D535003CB825 /* UIGestureRecognizer+Action.m in Sources */,
 				FB4FD2E01D7FC4CC001A8A3F /* UIImage+Color.m in Sources */,
@@ -568,6 +593,7 @@
 				FBFDC8731D828E3300D7157C /* NSUserDefaults+Unit.m in Sources */,
 				FB54FFCC1D532BF500903F9C /* LTBaseTabBarViewController.m in Sources */,
 				FB4FD2E51D7FC4CC001A8A3F /* UIView+Layer.m in Sources */,
+				FBC681FF1DB0A45600AD3B81 /* LTPageControl.m in Sources */,
 				FB4FD2E41D7FC4CC001A8A3F /* UIView+Fuzzy.m in Sources */,
 				FB4FD2F01D811216001A8A3F /* UIViewController+Utils.m in Sources */,
 				FBFDC86F1D8285EE00D7157C /* NSString+Unit.m in Sources */,

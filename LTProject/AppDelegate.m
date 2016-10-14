@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LTBaseTabBarViewController.h"
 #import "AppDelegate+_DTouch.h"
+
 @interface AppDelegate ()
 
 @end
@@ -21,7 +22,6 @@
     
     LTBaseTabBarViewController *baseTabBar = [LTBaseTabBarViewController new];
     self.window.rootViewController = baseTabBar;
-    
     [self create3DTouch];
     
     return YES;
