@@ -14,11 +14,15 @@
 #import "LTStarView.h"
 #import "LT3DTouchViewController.h"
 #import "LTCarouselView.h"
+#import "SDCycleScrollView.h"
 
 @interface LTMainViewController ()
 <
     LTCarouselViewDelegate
 >
+
+@property (nonatomic,strong)SDCycleScrollView *cycleScrollView;
+
 @end
 
 @implementation LTMainViewController
@@ -66,20 +70,35 @@
     [self.view addSubview:starView];
     */
     
+    NSArray *url = @[@"http://e-learning.gzshell.com:9000/lms_data/lms/storage/users_picture/38_57c7935a7db99.jpg",
+                     @"http://e-learning.gzshell.com:9000/lms_data/lms/storage/users_picture/fbf7dc8e18fce0072802e0874cdc2ea2.png",
+                     @"http://elearning.star-riverliquor.com:9810/lms_data/lms/storage/courses_picture/SRDC-HY-000002.jpg",
+                     @"http://elearning.star-riverliquor.com:9810/lms_data/lms/storage/courses_picture/SRDC-ADMIN-000004.jpg"];
     // 轮播图
-    LTCarouselView *carouse = [[LTCarouselView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200) imageAry:@[@"banner_1",@"banner_2",@"banner_1",@"banner_2",@"banner_1",@"banner_2"] delegate:self];
+    LTCarouselView *carouse = [[LTCarouselView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200) urlImageAry:url delegate:self];
     /*
     carouse.isShowTitle = NO;
-    carouse.isAutoScroller = YES;
     carouse.timeInerval = 3;
     carouse.isShowPage = NO;
     */
-    
-    carouse.localImages = @[@"banner_1"];
-    carouse.titles = @[@"不好"];
-    carouse.titleFontSize = 8;
-    
+    carouse.isAutoScroller = YES;
+    carouse.placeholderImage = [UIImage imageNamed:@"12"];
+    carouse.titleFontColor = [UIColor whiteColor];
+    carouse.titles = @[@"1",@"2",@"3",@"4"];
     [self.view addSubview:carouse];
+    
+    _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 200) imageURLStringsGroup:url];
+    _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
+    _cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
+    _cycleScrollView.titleLabelTextFont = [UIFont systemFontOfSize:14];
+    _cycleScrollView.hidesForSinglePage = NO;
+    _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+    _cycleScrollView.pageControlDotSize = CGSizeMake(10, 10);
+    //    _cycleScrollView.titlesGroup = @[@"学习",@"测评"];
+    _cycleScrollView.autoScroll = YES;
+    _cycleScrollView.infiniteLoop = YES;
+    _cycleScrollView.backgroundColor = [UIColor clearColor];
+//    [self.view addSubview:_cycleScrollView];
 }
 
 #pragma mark - LTCarouselViewDelegate
@@ -89,7 +108,7 @@
 
 - (void)carouselView:(LTCarouselView *)carouselView slidingImageAtIndex:(NSInteger)index {
     
-    NSLog(@" 当前页数 %ld",index);
+    NSLog(@" 当前滚动页数 %ld",index);
 }
 
 - (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {

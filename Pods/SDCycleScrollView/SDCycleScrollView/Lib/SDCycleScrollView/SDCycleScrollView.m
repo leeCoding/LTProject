@@ -291,6 +291,8 @@ NSString * const ID = @"cycleCell";
     
     _totalItemsCount = self.infiniteLoop ? self.imagePathsGroup.count * 100 : self.imagePathsGroup.count;
     
+    NSLog(@" ====== %ld",_totalItemsCount);
+    
     if (imagePathsGroup.count != 1) {
         self.mainView.scrollEnabled = YES;
         [self setAutoScroll:self.autoScroll];
@@ -424,10 +426,13 @@ NSString * const ID = @"cycleCell";
         if (self.infiniteLoop) {
             
             targetIndex = _totalItemsCount * 0.5;
+            NSLog(@" 总数---------------------- %ld  ",targetIndex);
             [_mainView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
         }
+        
         return;
     }
+    
     [_mainView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
 }
 
@@ -538,8 +543,9 @@ NSString * const ID = @"cycleCell";
 {
     SDCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     long itemIndex = indexPath.item % self.imagePathsGroup.count;
-    
+    NSLog(@" itemIndex  %ld",itemIndex);
     NSString *imagePath = self.imagePathsGroup[itemIndex];
+    NSLog(@" imagePath  %@",imagePath);
     
     if (!self.onlyDisplayText && [imagePath isKindOfClass:[NSString class]]) {
         if ([imagePath hasPrefix:@"http"]) {

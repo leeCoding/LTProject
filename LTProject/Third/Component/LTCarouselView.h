@@ -42,6 +42,8 @@
 
 @property (nonatomic,assign)CGFloat titleFontSize; ///< 设置标题文字大小。Setting title font size.
 
+@property (nonatomic,strong)UIColor *titleFontColor; ///< 设置标题文字颜色。Setting title font color.
+
 /**************************** 设置数据 ／ Setting data. ****************************/
 
 @property (nonatomic,strong)NSArray *urlImages; ///< 设置网络图片数组。 Setting url array.

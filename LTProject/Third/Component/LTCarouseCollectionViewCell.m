@@ -8,6 +8,12 @@
 
 #import "LTCarouseCollectionViewCell.h"
 
+@interface LTCarouseCollectionViewCell()
+
+@property (nonatomic ,strong)UIView *labelBackgroundView;
+
+@end
+
 @implementation LTCarouseCollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -17,6 +23,7 @@
     
         [self initUI];
     }
+    
     return self;
 }
 
@@ -24,15 +31,18 @@
 - (void)initUI {
     
     _bannerImageView = [[UIImageView alloc]init];
-    _bannerImageView.backgroundColor = [UIColor purpleColor];
+    _bannerImageView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_bannerImageView];
     
     _titleLabel = [[UILabel alloc]init];
     _titleLabel.textColor = [UIColor whiteColor];
     _titleLabel.font = [UIFont systemFontOfSize:14];
-    _titleLabel.backgroundColor = [UIColor grayColor];
-    _titleLabel.alpha = .7;
-    [self addSubview:_titleLabel];
+    
+    _labelBackgroundView = [[UIView alloc]init];
+    _labelBackgroundView.backgroundColor = [UIColor grayColor];
+    _labelBackgroundView.alpha = .7;
+    [_labelBackgroundView addSubview:_titleLabel];
+    [self addSubview:_labelBackgroundView];
 }
 
 - (void)setTitleLabel:(UILabel *)titleLabel {
@@ -56,15 +66,27 @@
     _titleFontSize = titleFontSize;
     _titleLabel.font = [UIFont systemFontOfSize:titleFontSize];
 }
--(void)layoutSubviews {
+
+- (void)setTextTitle:(NSString *)textTitle {
+    _textTitle = textTitle;
+    _titleLabel.text = [NSString stringWithFormat:@"    %@",_textTitle];
+}
+
+- (void)setTitleFontColor:(UIColor *)titleFontColor {
+    _titleFontColor = titleFontColor;
+    _titleLabel.textColor = _titleFontColor;
+}
+
+- (void)layoutSubviews {
     [super layoutSubviews];
     
     float height = CGRectGetHeight(self.frame);
     float Width = CGRectGetWidth(self.frame);
+    float labelHeight = 30;
     
     _bannerImageView.frame = CGRectMake(0, 0, Width, height);
-    _titleLabel.frame = CGRectMake(0, height - 35, Width, 35);
-    
+    _labelBackgroundView.frame = CGRectMake(0, height - labelHeight, Width, labelHeight);
+    _titleLabel.frame = CGRectMake(0, 0, Width - 100, labelHeight);
 }
 
 @end

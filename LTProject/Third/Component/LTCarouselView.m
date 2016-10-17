@@ -9,6 +9,9 @@
 #import "LTCarouselView.h"
 #import "LTCarouseCollectionViewCell.h"
 #import "LTPageControl.h"
+#import "UIImageView+WebCache.h"
+
+#define kItemNumber 99
 
 @interface LTCarouselView ()
 <
@@ -85,6 +88,7 @@
     _isCycleScroller = YES;
     _isAnimationScroller = YES;
     _titleFontSize = 14;
+    _titleFontColor = [UIColor whiteColor];
     
     // 开始滚动
     [self autoActionScrollView];
@@ -111,27 +115,16 @@
     [self addSubview:self.collectionView];
     
     // 页数
-    self.pageControl = [[LTPageControl alloc]initWithFrame:CGRectMake(0, self.collectionView.frame.size.height - 35, self.collectionView.frame.size.width, 35)];
+    self.pageControl = [[LTPageControl alloc]initWithFrame:CGRectMake(self.collectionView.frame.size.width - 100, self.collectionView.frame.size.height - 30, 100, 30)];
     
     NSInteger numPage = 0;
     if (_urlImages != nil && _urlImages.count != 0) numPage = _urlImages.count;
     else numPage = _localImages.count;
     
+    self.pageControl.numberOfPages = numPage;
     self.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
-    self.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     [self addSubview:self.pageControl];
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
-    
-    NSLog(@"开始触碰");
-}
-
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [super touchesEnded:touches withEvent:event];
-    
-    NSLog(@"结束触碰");
 }
 
 // 标题位置
@@ -148,7 +141,6 @@
 // 设置时长
 - (void)setTimeInerval:(CGFloat)timeInerval {
     _timeInerval = timeInerval;
-    NSLog(@" %d",_isAutoScroller);
     [self setIsAutoScroller:self.isAutoScroller];
 }
 
@@ -184,6 +176,12 @@
 - (void)setTitleFontSize:(CGFloat)titleFontSize {
     _titleFontSize = titleFontSize;
 }
+
+// 设置标题字体颜色
+- (void)setTitleFontColor:(UIColor *)titleFontColor {
+    _titleFontColor = titleFontColor;
+}
+
 // 设置本地图片
 -(void)setLocalImages:(NSMutableArray *)localImages {
     _localImages = localImages;
@@ -231,48 +229,53 @@
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    if (_urlImages != nil && _urlImages.count != 0) return _urlImages.count;
+    if (_urlImages != nil && _urlImages.count != 0) return _urlImages.count * 2 * kItemNumber;
     
-    return _localImages == nil ? 0 : _localImages.count;
+    return _localImages == nil ? 0 : _localImages.count * 2 * kItemNumber;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     LTCarouseCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
    
+    long itemIndex = 0;
     if (_urlImages !=nil && _urlImages.count != 0) {
+        itemIndex = indexPath.item % _urlImages.count;
         
-        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_urlImages[indexPath.row]]];
-        UIImage *image = [UIImage imageWithData:imageData];
-        
-        // 如果网络图片为空的话就设置占位图
-        image == nil ? (_placeholderImage == nil ? (cell.bannerImageView.image = nil) : (cell.bannerImageView.image =_placeholderImage)) :(cell.bannerImageView.image = image);
+        [cell.bannerImageView sd_setImageWithURL:[NSURL URLWithString:_urlImages[itemIndex]] placeholderImage:_placeholderImage];
         
     } else {
-        
+        itemIndex = indexPath.item % _localImages.count;
+
         if ([_localImages[indexPath.row] isKindOfClass:[NSString class]]) {
-            cell.bannerImageView.image = [UIImage imageNamed:_localImages[indexPath.row]];
+            cell.bannerImageView.image = [UIImage imageNamed:_localImages[itemIndex]];
             
         } else {
-            cell.bannerImageView.image = _localImages[indexPath.row];
+            
+            cell.bannerImageView.image = _localImages[itemIndex];
         }
     }
-    cell.textAlignment = self.titleTextAlignment;
-    cell.isShowTitle = self.isShowTitle;
-    cell.titleFontSize = self.titleFontSize;
     
+    
+    cell.textAlignment = _titleTextAlignment;
+    cell.isShowTitle = _isShowTitle;
+    cell.titleFontSize = _titleFontSize;
+    cell.titleFontColor = _titleFontColor;
+
     if (_titles != nil && _titles.count != 0) {
         
-        cell.titleLabel.text = _titles[indexPath.row];
+        itemIndex = indexPath.item % _titles.count;
+        if (itemIndex < _titles.count) {
+            cell.textTitle = _titles[itemIndex];
+        }
     }
-    
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([self.delegate respondsToSelector:@selector(carouselView:didSelectorImageAtIndex:)]) {
-        [self.delegate carouselView:self didSelectorImageAtIndex:indexPath.row];
+        [self.delegate carouselView:self didSelectorImageAtIndex:indexPath.item % _urlImages.count];
     }
 }
 
@@ -280,33 +283,30 @@
 - (void)autoActionScrollView {
     
     // 图片数组不等于空 且设置为自动播放
-    
     if (_urlImages != nil && _urlImages.count != 0) {
-        
         if (_isAutoScroller)[self addAutoTimer];
         
     } else {
-     
-        if (_isAutoScroller && _localImages != nil && _localImages.count != 0) {
-            [self addAutoTimer];
-        }
+        if (_isAutoScroller && _localImages != nil && _localImages.count != 0) [self addAutoTimer];
     }
 }
 
+#pragma mark - 添加定时器
 - (void)addAutoTimer {
     
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:_timeInerval target:self selector:@selector(actionScrollView) userInfo:nil repeats:YES];
     _timer = timer;
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
+
 #pragma mark - 开始滚动
 - (void)actionScrollView {
     
     //1）获取当前正在展示的位置
-    NSIndexPath *currentIndexPath=[[self.collectionView indexPathsForVisibleItems]lastObject];
+    NSIndexPath *currentIndexPath = [[self.collectionView indexPathsForVisibleItems]lastObject];
    
     //2）计算出下一个需要展示的位置
-    NSInteger nextItem=currentIndexPath.item + 1;
+    NSInteger nextItem = currentIndexPath.item + 1;
     
     //3)当item等于数组总数item 归零
     
@@ -324,6 +324,7 @@
             [self isCycleScrollerRemoveTimer];
         }
     }
+    
     //4)设置index
     NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem inSection:0];
     
@@ -341,8 +342,17 @@
 #pragma mark - 已经滑动
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    float index  = scrollView.contentOffset.x/self.collectionView.frame.size.width;
-    self.pageControl.currentPage = index;
+//    float index = scrollView.contentOffset.x/self.collectionView.frame.size.width;
+    
+//    NSIndexPath *currentIndexPath = [[self.collectionView indexPathsForVisibleItems]lastObject];
+    
+//    self.pageControl.currentPage = currentIndexPath.item % _urlImages.count;
+    
+//    NSLog(@" =============___#_@#@_#@_#@_#_ %ld",self.pageControl.currentPage);
+//    
+//    NSLog(@" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%d",(int)index);
+
+//    self.pageControl.currentPage = self.pageControl.currentPage;
 }
 
 /// 开始拖动
@@ -356,17 +366,34 @@
     
     [self autoActionScrollView];
 }
+// 滚动动画结束的时候调用
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    // 手动调用减速完成的方法
+    [self scrollViewDidEndDecelerating:self.collectionView];
+}
 
 #pragma mark - 结束滑动
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
-    float index  = scrollView.contentOffset.x/self.collectionView.frame.size.width;
-    self.pageControl.currentPage = index;
+//    float index  = scrollView.contentOffset.x / self.collectionView.frame.size.width;
+//    self.pageControl.currentPage = index;
+    /*
+    NSIndexPath *currentIndexPath = [[self.collectionView indexPathsForVisibleItems]lastObject];
+    self.pageControl.currentPage = currentIndexPath.item % _urlImages.count;
+    NSLog(@" 结束滑动时的page %ld",self.pageControl.currentPage);
+    */
     
+    CGFloat offsetX = scrollView.contentOffset.x;
+    CGFloat page = offsetX / self.bounds.size.width + 0.5;
+    page = (NSInteger)page % _urlImages.count;
+    self.pageControl.currentPage = page;
+    NSLog(@" 重新计算结束滑动时的page %ld",self.pageControl.currentPage);
+
     // 滑动回调
     if ([self.delegate respondsToSelector:@selector(carouselView:slidingImageAtIndex:)]) {
-        [self.delegate carouselView:self slidingImageAtIndex:index];
+        [self.delegate carouselView:self slidingImageAtIndex:page];
     }
+    
 }
 
 #pragma mark - 移除定时器
