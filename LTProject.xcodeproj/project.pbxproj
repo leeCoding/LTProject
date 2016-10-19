@@ -43,6 +43,7 @@
 		FBCB0B401D460E0700DF9D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCB0B3F1D460E0700DF9D93 /* Assets.xcassets */; };
 		FBCB0B431D460E0700DF9D93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBCB0B411D460E0700DF9D93 /* LaunchScreen.storyboard */; };
 		FBCB0B711D47144000DF9D93 /* LTExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB0B701D47144000DF9D93 /* LTExpression.m */; };
+		FBDFC2341DB7476700173221 /* nodata@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDFC2331DB7476700173221 /* nodata@2x.png */; };
 		FBE2C88A1D65A6AD00CB701A /* LTPlaySystemSound.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE2C8891D65A6AD00CB701A /* LTPlaySystemSound.m */; };
 		FBFDC86F1D8285EE00D7157C /* NSString+Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFDC86E1D8285EE00D7157C /* NSString+Unit.m */; };
 		FBFDC8731D828E3300D7157C /* NSUserDefaults+Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFDC8721D828E3300D7157C /* NSUserDefaults+Unit.m */; };
@@ -118,6 +119,7 @@
 		FBCB0B441D460E0700DF9D93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBCB0B6F1D47144000DF9D93 /* LTExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTExpression.h; sourceTree = "<group>"; };
 		FBCB0B701D47144000DF9D93 /* LTExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTExpression.m; sourceTree = "<group>"; };
+		FBDFC2331DB7476700173221 /* nodata@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nodata@2x.png"; sourceTree = "<group>"; };
 		FBE2C8881D65A6AD00CB701A /* LTPlaySystemSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPlaySystemSound.h; sourceTree = "<group>"; };
 		FBE2C8891D65A6AD00CB701A /* LTPlaySystemSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTPlaySystemSound.m; sourceTree = "<group>"; };
 		FBFDC86D1D8285EE00D7157C /* NSString+Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Unit.h"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				FB6A99CE1DAA2B6300EBCED1 /* 12.png */,
 				FB6A99CF1DAA2B6300EBCED1 /* 21.png */,
+				FBDFC2331DB7476700173221 /* nodata@2x.png */,
 				FB4FD2E71D800C7D001A8A3F /* LTMainViewController.h */,
 				FB4FD2E81D800C7D001A8A3F /* LTMainViewController.m */,
 				FB3711861DA9E289003CB825 /* LTStarView.h */,
@@ -509,6 +512,7 @@
 			files = (
 				FB6A99D01DAA2B6300EBCED1 /* 12.png in Resources */,
 				FB4FD2C51D7EC4FF001A8A3F /* 8.png in Resources */,
+				FBDFC2341DB7476700173221 /* nodata@2x.png in Resources */,
 				FB54FFC91D532B7500903F9C /* LTRootViewController.xib in Resources */,
 				FBCB0B431D460E0700DF9D93 /* LaunchScreen.storyboard in Resources */,
 				FB6A99D11DAA2B6300EBCED1 /* 21.png in Resources */,

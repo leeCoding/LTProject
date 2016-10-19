@@ -3,7 +3,7 @@
 //  LTProject
 //
 //  Created by Jonny on 2016/10/13.
-//  Copyright © 2016年 上海众盟软件科技股份有限公司. All rights reserved.
+//  Copyright © 2016年 ZUBMO. All rights reserved.
 //
 
 #import "LTCarouselView.h"
@@ -387,7 +387,6 @@
     CGFloat page = offsetX / self.bounds.size.width + 0.5;
     page = (NSInteger)page % _urlImages.count;
     self.pageControl.currentPage = page;
-    NSLog(@" 重新计算结束滑动时的page %ld",self.pageControl.currentPage);
 
     // 滑动回调
     if ([self.delegate respondsToSelector:@selector(carouselView:slidingImageAtIndex:)]) {

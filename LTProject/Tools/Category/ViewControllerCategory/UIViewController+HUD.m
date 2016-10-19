@@ -3,7 +3,7 @@
 //  LTProject
 //
 //  Created by Jonny on 2016/9/28.
-//  Copyright © 2016年 上海众盟软件科技股份有限公司. All rights reserved.
+//  Copyright © 2016年 ZUBMO. All rights reserved.
 //
 
 #import "UIViewController+HUD.h"
@@ -39,7 +39,7 @@ static const void *kProTapG = @"k_Pro_TapG";
     if (subhud == nil) {
         subhud = [[UILabel alloc]initWithFrame:CGRectMake(20, self.view.center.y, self.view.frame.size.width - 40, 30)];
         subhud.textColor = [UIColor grayColor];
-        subhud.font = [UIFont systemFontOfSize:14];
+        subhud.font = [UIFont systemFontOfSize:10];
         subhud.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:subhud];
         
@@ -52,20 +52,43 @@ static const void *kProTapG = @"k_Pro_TapG";
 #pragma mark - 显示状态 Show status
 - (void)showStatus:(NSString *)status tapViewWithBlock:(tapViewWithBlock)block {
     
-    if (status == nil) {
-        return;
-    }
+    [self addStatusAndImage:status image:nil tapViewWithBlock:block];
+}
+
+#pragma mark - 显示状态以及显示没有数据时的图片
+- (void)showStatus:(NSString *)status imageView:(UIImage *)image tapViewWithBlock:(tapViewWithBlock)block {
     
-    self.labelHud.text = status;
-    
-    if (block) {
-        
-        objc_setAssociatedObject(self, &kTapG, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    }
+    [self addStatusAndImage:status image:image tapViewWithBlock:block];
+}
+
+/* 添加点击手势 */
+- (void)addTapGesture {
     
     // 添加全屏手势
     self.tapGestureBlock = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBlock)];
     [self.view addGestureRecognizer:self.tapGestureBlock];
+}
+
+/* 添加文字及图片 */
+- (void)addStatusAndImage:(NSString *)status image:(UIImage *)image tapViewWithBlock:(tapViewWithBlock)block{
+    
+    if (status) {
+        
+     self.labelHud.text = status;
+    }
+    if (image) {
+        
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake((self.view.frame.size.width - 50) / 2, self.view.center.y - 50, 50, 50)];
+        imageView.image = image;
+        imageView.tag = 10086;
+        [self.view addSubview:imageView];
+    }
+    if (block) {
+        
+        objc_setAssociatedObject(self, &kTapG, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    }
+    // 添加手势
+    [self addTapGesture];
 }
 
 #pragma mark - 回调  Click return
@@ -88,6 +111,11 @@ static const void *kProTapG = @"k_Pro_TapG";
         } completion:^(BOOL finished) {
             [__weakSelf.labelHud removeFromSuperview];
         }];
+        UIImageView *imageView = [self.view viewWithTag:10086];
+        if (imageView) {
+            [imageView removeFromSuperview];
+        }
+
     }
     
     [self.view removeGestureRecognizer: self.tapGestureBlock];

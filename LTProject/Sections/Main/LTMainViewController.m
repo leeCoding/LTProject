@@ -3,7 +3,7 @@
 //  LTProject
 //
 //  Created by Jonny on 16/9/7.
-//  Copyright © 2016年 上海众盟软件科技股份有限公司. All rights reserved.
+//  Copyright © 2016年 ZUBMO. All rights reserved.
 //
 
 #import "LTMainViewController.h"
@@ -56,24 +56,21 @@
     UIImageView *imageView1 = [[UIImageView alloc]init];
     imageView1.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:imageView1];
-    
 
     self.view.backgroundColor = [UIColor whiteColor];
 
-    
     /*
     /// 星星评分
     LTStarView *starView = [[LTStarView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 100) clickBtn:^(NSString *score) {
         NSLog(@" 分数 %@",score);
     }];
-    
     [self.view addSubview:starView];
     */
     
     NSArray *url = @[@"http://e-learning.gzshell.com:9000/lms_data/lms/storage/users_picture/38_57c7935a7db99.jpg",
                      @"http://e-learning.gzshell.com:9000/lms_data/lms/storage/users_picture/fbf7dc8e18fce0072802e0874cdc2ea2.png",
-                     @"http://elearning.star-riverliquor.com:9810/lms_data/lms/storage/courses_picture/SRDC-HY-000002.jpg",
-                     @"http://elearning.star-riverliquor.com:9810/lms_data/lms/storage/courses_picture/SRDC-ADMIN-000004.jpg"];
+                     /*@"http://elearning.star-riverliquor.com:9810/lms_data/lms/storage/courses_picture/SRDC-HY-000002.jpg",
+                     @"http://elearning.star-riverliquor.com:9810/lms_data/lms/storage/courses_picture/SRDC-ADMIN-000004.jpg"*/];
     // 轮播图
     LTCarouselView *carouse = [[LTCarouselView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200) urlImageAry:url delegate:self];
     /*
@@ -87,6 +84,7 @@
     carouse.titles = @[@"1",@"2",@"3",@"4"];
     [self.view addSubview:carouse];
     
+    /*
     _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 200) imageURLStringsGroup:url];
     _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
     _cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
@@ -94,11 +92,20 @@
     _cycleScrollView.hidesForSinglePage = NO;
     _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     _cycleScrollView.pageControlDotSize = CGSizeMake(10, 10);
-    //    _cycleScrollView.titlesGroup = @[@"学习",@"测评"];
+    _cycleScrollView.titlesGroup = @[@"学习",@"测评"];
     _cycleScrollView.autoScroll = YES;
     _cycleScrollView.infiniteLoop = YES;
     _cycleScrollView.backgroundColor = [UIColor clearColor];
-//    [self.view addSubview:_cycleScrollView];
+    [self.view addSubview:_cycleScrollView];
+    */
+    
+    [self showStatus:@"暂时没有数据,点击刷新" imageView:[UIImage imageNamed:@"nodata"] tapViewWithBlock:^{
+        NSLog(@" 点击了 屏幕");
+    }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self hide];
+    });
 }
 
 #pragma mark - LTCarouselViewDelegate

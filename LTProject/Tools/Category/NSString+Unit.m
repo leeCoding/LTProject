@@ -3,7 +3,7 @@
 //  LTProject
 //
 //  Created by Jonny on 16/9/9.
-//  Copyright © 2016年 上海众盟软件科技股份有限公司. All rights reserved.
+//  Copyright © 2016年 ZUBMO. All rights reserved.
 //
 
 #import "NSString+Unit.h"
