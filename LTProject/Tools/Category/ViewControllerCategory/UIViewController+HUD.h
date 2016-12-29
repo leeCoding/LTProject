@@ -13,12 +13,13 @@ typedef void(^tapViewWithBlock)();
 
 @interface UIViewController (HUD)
 
-/// 显示状态 点击屏幕时回调 Show status, Click When screen call block
+/// 显示状态，点击屏幕时回调。显示文字
 - (void)showStatus:(NSString *)status tapViewWithBlock:(tapViewWithBlock)block;
 
-- (void)showStatus:(NSString *)status imageView:(UIImage *)image tapViewWithBlock:(tapViewWithBlock)block;
+/// 显示状态，点击屏幕时回调，如果是gif，type请填gif, 默认加载jpg,png。
+- (void)showStatus:(NSString *)status imageName:(NSString *)imageName type:(NSString *)type tapViewWithBlock:(tapViewWithBlock)block;
 
-/// 消失 Hide tips
+/// 隐藏提示
 - (void)hide;
 
 @end

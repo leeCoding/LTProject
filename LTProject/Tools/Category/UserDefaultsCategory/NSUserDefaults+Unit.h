@@ -3,7 +3,7 @@
 //  LTProject
 //
 //  Created by Jonny on 16/9/9.
-//  Copyright © 2016年 ZUBMO. All rights reserved.
+//  Copyright © 2016年 上海众盟软件科技股份有限公司. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -16,7 +16,7 @@
 /**
  *  同步
  */
-+ (void)lt_synchronize;
++(void)lt_synchronize;
 
 /* 存Bool */
 + (void)lt_setBool:(BOOL)values key:(NSString *)key;

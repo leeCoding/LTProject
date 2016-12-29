@@ -1,47 +1,25 @@
 //
-//  LTRootViewController.m
-//  LTTools
+//  LTMyViewController.m
+//  LTProject
 //
-//  Created by Jonny on 16/7/25.
+//  Created by Jonny on 16/9/20.
 //  Copyright © 2016年 上海众盟软件科技股份有限公司. All rights reserved.
 //
 
-#import "LTRootViewController.h"
+#import "LTMyViewController.h"
 
-@interface LTRootViewController ()
+@interface LTMyViewController ()
 
 @end
 
-@implementation LTRootViewController
+@implementation LTMyViewController
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
-    
-    [self initData];
-    
-    [self initUI];
-}
-
-#pragma mark - 初始化数据
-- (void)initData {
-    
-    
-}
-
-#pragma mark - 初始化视图
-- (void)initUI {
-    
-    self.view.backgroundColor = _kMainColor;
-    
-    /* 设置导航线为空白
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    */
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
-    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
